@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/layout';
+import usePosts from '../hooks/use-posts';
 
-export default () => (
-  <Layout>
-    <h1>Home!</h1>
-    <h2>Hello Frontend Masters!</h2>
-    <Link to="/about"> &rarr; About.</Link>
-  </Layout>
-);
+export default () => {
+  const posts = usePosts();
+
+  return (
+    <Layout>
+      <h1>Home!</h1>
+      <p>Hello Frontend Masters!</p>
+      <h2>Read the blog</h2>
+      {posts.map(post => (
+        <pre key={post.slug}>{JSON.stringify(post, null, 2)}</pre>
+      ))}
+    </Layout>
+  );
+};
