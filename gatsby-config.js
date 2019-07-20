@@ -1,3 +1,19 @@
 module.exports = {
-  plugins: ['gatsby-plugin-emotion'],
-}
+  siteMetadata: {
+    title: 'Learning to build a Gatsby Powered Website',
+    description:
+      'A site built to figure out how to move taffy from 2014 into 2019.',
+  },
+  plugins: [
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.js'),
+        },
+      },
+    },
+  ],
+};
