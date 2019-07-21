@@ -50,6 +50,11 @@ const Layout = ({ children }) => {
             color: #333;
           }
 
+          p {
+            font-size: 14px;
+            line-height: 1;
+          }
+
           li {
             margin-top: 0.25rem;
           }
