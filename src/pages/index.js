@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import usePosts from '../hooks/use-posts';
+import PostPreview from '../components/post-preview';
 
 export default () => {
   const posts = usePosts();
@@ -11,7 +12,7 @@ export default () => {
       <p>Hello Frontend Masters!</p>
       <h2>Read the blog</h2>
       {posts.map(post => (
-        <pre key={post.slug}>{JSON.stringify(post, null, 2)}</pre>
+        <PostPreview key={post.slug} post={post}></PostPreview>
       ))}
     </Layout>
   );
